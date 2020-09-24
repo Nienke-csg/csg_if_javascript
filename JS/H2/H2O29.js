@@ -26,6 +26,7 @@ var jos = {
   aantalFrames: 6,
   frameNummer: 3,
   stapGrootte: null,
+  gehaald: false,
 
   beweeg() {
     if (keyIsDown(LEFT_ARROW)) {
@@ -45,8 +46,8 @@ var jos = {
       this.frameNummer = 5;
     }
     
-    this.x = constrain(this.x,0,canvas.width-raster.celGrootte);
-    this.y = constrain(this.y,0,canvas.height-raster.celGrootte);
+    this.x = constrain(this.x,0,canvas.width);
+    this.y = constrain(this.y,0,canvas.height - raster.celGrootte);
   },
   
   wordtGeraakt(vijand) {
