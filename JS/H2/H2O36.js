@@ -33,18 +33,21 @@ function setup() {
   noStroke();
   frameRate(1);
   
-  for (var b = 0; b < 10; b++) {
+  for (var b = 0; b < 20; b++) {
     bomen.push(new Boom());
   }
 }
 
 function draw() {
   background('orange');
+  bomen[10].G = 0;
   fill('wheat');
-  rect(0,350,canvas.width,canvas.height-350);
+  rect(0,350,canvas.width,canvas.height - 350);
   
   for (var n = 0;n < bomen.length;n++) {
+      if (bomen[n].leeftijd < 10) {
     bomen[n].teken();
     bomen[n].groei();
+    }
   }
 }

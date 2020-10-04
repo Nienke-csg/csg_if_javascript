@@ -1,11 +1,13 @@
-var raster = {
-  aantalRijen: 6,
-  aantalKolommen: 9,
-  celGrootte: null,
-  
+class Raster {
+  constructor() {
+   this.aantalKolommen = 9;
+   this.aantalRijen = 6;   
+   this.celGrootte = null;
+}
+
   berekenCelGrootte() {
     this.celGrootte = canvas.width/this.aantalKolommen;
-  },
+  };
   teken() {
     push();
     noFill();
@@ -18,6 +20,8 @@ var raster = {
     pop();
   }
 }
+
+
 
 class Jos {
   constructor() {
@@ -100,6 +104,8 @@ function setup() {
   frameRate(10);
   textFont("Verdana");
   textSize(90);
+
+  raster = new Raster();
   raster.berekenCelGrootte();
   
   eve = new Jos();
@@ -117,7 +123,7 @@ function setup() {
 
 function draw() {
   background(brug);
-  raster.teken();
+  Raster.teken();
   eve.beweeg();
   alice.beweeg();
   eve.toon();
